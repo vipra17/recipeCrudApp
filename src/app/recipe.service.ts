@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RecipeService {
 
-  private baseUrlApi = "http://localhost:8081";
+  private baseUrlApi = "https://arcane-tundra-30470.herokuapp.com";
 
   constructor(private http: HttpClient) {}
 
