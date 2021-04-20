@@ -82,14 +82,9 @@ constructor(private route: ActivatedRoute, private recipeService: RecipeService,
     this.recipe = new Recipe();
   }
   save() {
-    if(this.recipeId){
-      this.recipeService.updateRecipe(this.recipe)
-      .subscribe(data => console.log(data), error => console.log(error));
-    }else{
       this.recipeService.createRecipe(this.recipe)
       .subscribe(data => console.log(data), error => console.log(error));
       this.recipe = new Recipe();
-    }
   }
   onSubmit() {
     this.submitted = true;

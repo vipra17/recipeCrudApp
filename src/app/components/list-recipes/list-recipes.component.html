@@ -1,8 +1,8 @@
-<div class="panel panel-default">
+<div class="panel panel-default" style="margin:20px;">
   <div class="panel-heading">
     <h3>All recipes</h3>
   </div>
-  <div *ngFor="let recipe of recipes | async" style="width: 300px;">
+  <div *ngFor="let recipe of recipes | async" style="width: auto;">
     <recipe-details [recipe]='recipe'></recipe-details>
   </div>
 </div>

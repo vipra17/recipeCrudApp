@@ -1,14 +1,15 @@
 <div *ngIf="recipe">
   <div class="panel-body">
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered" style="width:auto">
       <thead>
         <tr>
 
-          <th>Created on</th>
-          <td>Dish Type</td>
-          <th>Ingredients</th>
+          <th>Date</th>
+          <td>Dish</td>
           <th>Served for</th>
+          <th>Ingredients</th>
           <th>Instruction</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -16,17 +17,17 @@
 
           <td>{{recipe.creationDateTime}}</td>
           <td>{{recipe.dishType}}</td>
+          <td class="overflow">{{recipe.noOfPeople}}</td>
           <td>
             <ul>
               <li *ngFor="let ingredient of recipe.ingredientList">{{ingredient.name}}</li>
             </ul>
           </td>
-          <td class="overflow">{{recipe.noOfPeople}}</td>
+
           <td class="overflow">{{recipe.cookingSteps}}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-danger" (click)="deleteRecipe(recipe.id)">Delete</button>
-<!--              <button type="button" class="btn btn-warning" (click)="updateRecipe(recipe.id)">Update</button>-->
             </div>
           </td>
          </tr>

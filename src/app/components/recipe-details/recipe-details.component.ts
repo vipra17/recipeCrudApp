@@ -28,7 +28,4 @@ export class RecipeDetailsComponent implements OnInit {
         },
         error => console.log(error));
   }
-  updateRecipe(id) {
-    this.router.navigate(['add', {'recipeId':id}]);
-  }
 }

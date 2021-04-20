@@ -1,4 +1,4 @@
-<h3>Create Recipe</h3>
+<h3 style="margin:20px;">Create Recipe</h3>
 <div [hidden]="submitted" style="width: 350px;">
   <form (ngSubmit)="onSubmit()" name="form1" id="form1" class="form-horizontal" [formGroup]="form">
 
@@ -11,7 +11,7 @@
 
     <div class="form-group">
       <div class="col-sm-12">
-        <label for="dishType" class="control-label">Dish type</label>
+        <label for="dishType" class="control-label">Dish</label>
         <input type="text" id="dishType" name="dishType" class="form-control" required [(ngModel)]="recipe.dishType" formControlName="dishType">
       </div>
     </div>
@@ -34,20 +34,20 @@
 
     <div class="form-group">
       <div class="col-sm-12">
-        <label for="cookingSteps" class="control-label">Cooking instruction</label>
+        <label for="cookingSteps" class="control-label">Cooking Steps</label>
         <input type="text" id="cookingSteps" name="cookingSteps" class="form-control" required  [(ngModel)]="recipe.cookingSteps" formControlName="cookingSteps">
       </div>
     </div>
 
 
-    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
-      Submit
+    <button type="submit" style="margin:20px;" class="btn btn-info" [disabled]="!form.valid">
+      Save Recipe
     </button>
 
   </form>
 </div>
-<div [hidden]="!submitted">
-  <h4>Recipe successfully created!</h4>
-  <button class="btn btn-primary" (click)="newRecipe()">Create new recipe</button>
+<div [hidden]="!submitted" style="margin:20px">
+  <h4 style="margin-bottom:10px;">Recipe successfully created!</h4>
+  <button class="btn btn-info" (click)="newRecipe()">Create new recipe</button>
 </div>
 

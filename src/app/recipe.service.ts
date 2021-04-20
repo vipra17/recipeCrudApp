@@ -19,10 +19,6 @@ export class RecipeService {
     return this.http.post(`${this.baseUrlApi}` + `/v1/recipes`, recipe);
   }
 
-  updateRecipe(value: any): Observable < Object > {
-    return this.http.put(`${this.baseUrlApi}`+ `/v1/recipes`, value);
-  }
-
   deleteRecipe(id: number): Observable < any > {
     return this.http.delete(`${this.baseUrlApi}`+ `/v1/recipes/${id}`);
   }
