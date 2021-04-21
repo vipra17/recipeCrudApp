@@ -31,9 +31,4 @@ export class RecipeService {
     return this.http.get(`${this.baseUrlApi}`+ `/v1/ingredients`);
   }
 
-  deleteAll(): Observable < any > {
-    return this.http.delete(`${this.baseUrlApi}` + `/delete`, {
-      responseType: 'text'
-    });
-  }
 }
