@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Recipe } from '../../recipe';
-import { Ingredients } from "../../ingredients";
-import { RecipeService } from '../../recipe.service';
+import { Recipe } from '../../model/recipe';
+import { Ingredients } from "../../model/ingredients";
+import { RecipeService } from '../../service/recipe.service';
 import { Observable } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({

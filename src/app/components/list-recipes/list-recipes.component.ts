@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { RecipeService } from '../../recipe.service';
-import { Recipe } from '../../recipe';
+import { Recipe } from '../../model/recipe';
+import { RecipeService } from '../../service/recipe.service';
 
 @Component({
   selector: 'list-recipes',
@@ -18,16 +18,6 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
-  }
-
-  deleteRecipes() {
-    this.recipeService.deleteAll()
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log('ERROR: ' + error));
   }
 
   reloadData() {

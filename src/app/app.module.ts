@@ -24,8 +24,8 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-        ReactiveFormsModule,
-         NgMultiSelectDropDownModule.forRoot(),
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
