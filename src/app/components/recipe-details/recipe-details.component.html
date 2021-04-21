@@ -1,37 +1,11 @@
 <div *ngIf="recipe">
-  <div class="panel-body">
-    <table class="table table-striped table-bordered" style="width:auto">
-      <thead>
-        <tr>
+          <h3 class="card-title">{{recipe.dishType}}</h3>
+          <p class="card-text">Date: {{recipe.creationDateTime}} </p>
+          <p class="card-text">Served for: {{recipe.noOfPeople}} </p>
+          <p class="card-text">Ingredients:   <li *ngFor="let ingredient of recipe.ingredientList">{{ingredient.name}}</li> </p>
+          <p class="card-text">Instruction: {{recipe.cookingSteps}} </p>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-danger" (click)="deleteRecipe(recipe.id)">Delete</button>
+          </div>
+      </div>
 
-          <th>Date</th>
-          <td>Dish</td>
-          <th>Served for</th>
-          <th>Ingredients</th>
-          <th>Instruction</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-
-          <td>{{recipe.creationDateTime}}</td>
-          <td>{{recipe.dishType}}</td>
-          <td class="overflow">{{recipe.noOfPeople}}</td>
-          <td>
-            <ul>
-              <li *ngFor="let ingredient of recipe.ingredientList">{{ingredient.name}}</li>
-            </ul>
-          </td>
-
-          <td class="overflow">{{recipe.cookingSteps}}</td>
-          <td>
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-danger" (click)="deleteRecipe(recipe.id)">Delete</button>
-            </div>
-          </td>
-         </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
