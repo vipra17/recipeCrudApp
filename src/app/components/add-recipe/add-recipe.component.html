@@ -4,18 +4,16 @@
 
     <div class="form-group">
       <div class="col-sm-12">
-        <label for="noOfPeople" class="control-label">Servings for</label>
-        <input type="number" id="noOfPeople" name="noOfPeople" class="form-control" required [(ngModel)]="recipe.noOfPeople" formControlName="noOfPeople">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-sm-12">
         <label for="dishType" class="control-label">Dish</label>
         <input type="text" id="dishType" name="dishType" class="form-control" required [(ngModel)]="recipe.dishType" formControlName="dishType">
       </div>
     </div>
-
+    <div class="form-group">
+      <div class="col-sm-12">
+        <label for="noOfPeople" class="control-label">Serves</label>
+        <input type="number" id="noOfPeople" name="noOfPeople" class="form-control" required [(ngModel)]="recipe.noOfPeople" formControlName="noOfPeople">
+      </div>
+    </div>
     <div class="form-group">
       <div class="col-sm-12">
         <label for="ingredientList">Ingredients</label>
@@ -34,7 +32,7 @@
 
     <div class="form-group">
       <div class="col-sm-12">
-        <label for="cookingSteps" class="control-label">Cooking Steps</label>
+        <label for="cookingSteps" class="control-label">Cooking Procedure</label>
         <textarea id="cookingSteps" name="cookingSteps" class="form-control" required  [(ngModel)]="recipe.cookingSteps" formControlName="cookingSteps"></textarea>
       </div>
     </div>
