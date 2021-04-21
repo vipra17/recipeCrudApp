@@ -7,9 +7,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 To run it locally follow the below steps:
 
-1. clone the repository and run npm install\
+1. clone the repository and run npm install
 
-2. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.\
+2. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 It is hosted on Heroku : https://recipe-crud-app.herokuapp.com/ingredients
 
