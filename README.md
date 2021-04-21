@@ -11,6 +11,6 @@ To run it locally follow the below steps:
 
 2. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-It is hosted on Heroku : https://recipe-crud-app.herokuapp.com/add
+It is hosted on Heroku : https://recipe-crud-app.herokuapp.com/ingredients
 
 
