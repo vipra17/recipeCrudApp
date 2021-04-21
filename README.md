@@ -1,7 +1,7 @@
 # RecipeCrudApp
 This application is used to view, add and delete recipes.
 
-It has been developed using Angular 11
+It has been developed using Angular 11 and bootstrap for styling. It is a responsive application.
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
