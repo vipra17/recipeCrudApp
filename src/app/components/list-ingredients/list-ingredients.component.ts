@@ -12,7 +12,6 @@ import { RecipeService } from '../../service/recipe.service';
 export class IngredientsListComponent implements OnInit {
 
   ingredients: Observable<Ingredients[]>;
-  showMenu: any;
 
   constructor(private recipeService: RecipeService) { }
 

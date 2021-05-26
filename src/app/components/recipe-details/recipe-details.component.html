@@ -4,7 +4,7 @@
           <p class="card-text">Served for: {{recipe.noOfPeople}} </p>
           <p class="card-text">Ingredients:   <li *ngFor="let ingredient of recipe.ingredientList">{{ingredient.name}}</li> </p>
           <p class="card-text">Instruction: {{recipe.cookingSteps}} </p>
-          <div class="btn-group" role="group" aria-label="Basic example">
+          <div class="btn-group" role="group" aria-label="Delete">
             <button type="button" class="btn btn-danger" (click)="deleteRecipe(recipe.id)">Delete</button>
           </div>
       </div>

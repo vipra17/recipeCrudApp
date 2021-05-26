@@ -1,17 +1,17 @@
 <h3 style="margin:20px;font-family:fantasy;">Create Recipe</h3>
-<div [hidden]="submitted" style="width: 350px;" class="card card-outline-secondary" style="padding:20px;">
+<div *ngIf="!submitted" style="width: 350px;" class="card card-outline-secondary" style="padding:20px;">
   <form (ngSubmit)="onSubmit()" class="form-horizontal" [formGroup]="form">
 
     <div class="form-group">
       <div class="col-sm-12">
         <label for="dishType" class="control-label">Dish</label>
-        <input type="text" id="dishType" name="dishType" class="form-control" required [(ngModel)]="recipe.dishType" formControlName="dishType">
+        <input type="text" id="dishType" name="dishType" class="form-control"  [(ngModel)]="recipe.dishType" formControlName="dishType">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-12">
         <label for="noOfPeople" class="control-label">Serves</label>
-        <input type="number" id="noOfPeople" name="noOfPeople" class="form-control" required [(ngModel)]="recipe.noOfPeople" formControlName="noOfPeople">
+        <input type="number" id="noOfPeople" name="noOfPeople" class="form-control"  [(ngModel)]="recipe.noOfPeople" formControlName="noOfPeople">
         </div>
     </div>
     <div class="form-group">
@@ -33,7 +33,7 @@
     <div class="form-group">
       <div class="col-sm-12">
         <label for="cookingSteps" class="control-label">Cooking Procedure</label>
-        <textarea id="cookingSteps" name="cookingSteps" class="form-control" required  [(ngModel)]="recipe.cookingSteps" formControlName="cookingSteps"></textarea>
+        <textarea id="cookingSteps" name="cookingSteps" class="form-control"  [(ngModel)]="recipe.cookingSteps" formControlName="cookingSteps"></textarea>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
 
   </form>
 </div>
-<div [hidden]="!submitted" style="margin:20px">
+<div *ngIf="submitted" style="margin:20px">
   <h4 style="margin-bottom:10px;">Recipe successfully created!</h4>
   <button class="btn btn-primary" (click)="newRecipe()">Create new recipe</button>
 </div>
