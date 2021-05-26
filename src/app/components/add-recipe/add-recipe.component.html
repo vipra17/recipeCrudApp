@@ -1,6 +1,6 @@
 <h3 style="margin:20px;font-family:fantasy;">Create Recipe</h3>
 <div [hidden]="submitted" style="width: 350px;" class="card card-outline-secondary" style="padding:20px;">
-  <form (ngSubmit)="onSubmit()" name="form1" id="form1" class="form-horizontal" [formGroup]="form">
+  <form (ngSubmit)="onSubmit()" class="form-horizontal" [formGroup]="form">
 
     <div class="form-group">
       <div class="col-sm-12">
@@ -12,7 +12,7 @@
       <div class="col-sm-12">
         <label for="noOfPeople" class="control-label">Serves</label>
         <input type="number" id="noOfPeople" name="noOfPeople" class="form-control" required [(ngModel)]="recipe.noOfPeople" formControlName="noOfPeople">
-      </div>
+        </div>
     </div>
     <div class="form-group">
       <div class="col-sm-12">

@@ -4,13 +4,19 @@
     <div class="col-md-12" style="font-family:fantasy;">
       <h2 class="text-center mb-5">{{title}}</h2>
       <ul class="nav nav-fill">
-        <a routerLink="add" class="nav-item" routerLinkActive="active">Add recipe</a>
-
-        <a routerLink="recipe" class="nav-item" routerLinkActive="active">View Recipes</a>
-
-        <a routerLink="ingredients" class="nav-item" routerLinkActive="active">View Ingredients</a>
+        <li class="nav-item">
+          <a routerLink="add" class="nav-link">Add recipe</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="recipe" class="nav-link">View Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="ingredients" class="nav-link">View Ingredients</a>
+        </li>
     </ul>
-  <router-outlet></router-outlet>
-</div>
+    <div class="container mt-5">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
   </div>
 </div>

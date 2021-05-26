@@ -1,34 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+const baseUrlApi = "https://arcane-tundra-30470.herokuapp.com";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
 
-  private baseUrlApi = "https://arcane-tundra-30470.herokuapp.com";
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private http: HttpClient) {}
-
-  getRecipe(id: number): Observable < Object > {
-    return this.http.get(`${this.baseUrlApi}`+`/v1/recipes/${id}`);
+  getRecipe(id: number): Observable <any> {
+    return this.httpClient.get(`${baseUrlApi}/v1/recipes/${id}`);
   }
 
-  createRecipe(recipe: Object): Observable < Object > {
-    return this.http.post(`${this.baseUrlApi}` + `/v1/recipes`, recipe);
+  createRecipe(recipe: Object): Observable <any> {
+    return this.httpClient.post(`${baseUrlApi}/v1/recipes`, recipe);
   }
 
-  deleteRecipe(id: number): Observable < any > {
-    return this.http.delete(`${this.baseUrlApi}`+ `/v1/recipes/${id}`);
+  deleteRecipe(id: number): Observable <any> {
+    return this.httpClient.delete(`${baseUrlApi}/v1/recipes/${id}`);
   }
 
-  getRecipesList(): Observable < any > {
-    return this.http.get(`${this.baseUrlApi}`+ `/v1/recipes`);
+  getRecipesList(): Observable <any> {
+    return this.httpClient.get(`${baseUrlApi}/v1/recipes`);
   }
 
-  getIngredientsList(): Observable < any > {
-    return this.http.get(`${this.baseUrlApi}`+ `/v1/ingredients`);
+  getIngredientsList(): Observable <any> {
+    return this.httpClient.get(`${baseUrlApi}/v1/ingredients`);
   }
 
 }

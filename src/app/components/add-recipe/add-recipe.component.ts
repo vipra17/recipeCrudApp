@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+
 import { Recipe } from '../../model/recipe';
 import { Ingredients } from "../../model/ingredients";
 import { RecipeService } from '../../service/recipe.service';
@@ -15,79 +15,60 @@ export class AddRecipeComponent implements OnInit {
   ingredientList: Observable<Ingredients[]>;
 
   submitted = false;
+
   dropdownList = [];
-  selectedItems = [];
   dropdownSettings = {};
-  recipeId: any;
 
   form: FormGroup;
 
-constructor(private route: ActivatedRoute, private recipeService: RecipeService, private formBuilder: FormBuilder) { }
+  constructor(private recipeService: RecipeService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-
-    this.route.params.subscribe(params => {
-      this.recipeId = params['recipeId'];
+    this.recipeService.getIngredientsList()
+    .subscribe(ingredientList => {
+      console.log(ingredientList);
+      this.dropdownList = ingredientList;
     });
-      console.log(this.recipeId);
-
-    if(this.recipeId){
-      this.recipeService.getRecipe(this.recipeId)
-      .subscribe(recipeData => {
-        this.recipe.id = this.recipeId;
-        this.recipe.cookingSteps = recipeData['cookingSteps'];
-        this.recipe.creationDateTime = recipeData['creationDateTime'];
-        this.recipe.dishType = recipeData['dishType'];
-        this.recipe.ingredientList = recipeData['ingredientList'];
-        this.recipe.noOfPeople = recipeData['noOfPeople'];
-      });
-    }
-    else{
-      this.recipe = new Recipe();
-      this.recipeService.getIngredientsList()
-      .subscribe(ingredientList => {
-        console.log(ingredientList);
-        this.dropdownList = ingredientList;
-      });
-    }
-
+    this.initForm();
     this.dropdownSettings = {
       singleSelection: false,
       idField: 'id',
       textField: 'name',
       enableCheckAll: false,
-      selectAllText: 'Select all',
-      unSelectAllText: 'Deselect all',
       itemsShowLimit: 20,
       allowSearchFilter: true,
-      searchPlaceholderText: 'Search for...',
+      searchPlaceholderText: 'Search for...'
     };
-
-    this.form = this.formBuilder.group({
-      noOfPeople: [null, [Validators.required, Validators.minLength(1)]],
-      dishType: [null, [Validators.required, Validators.minLength(1)]],
-      ingredientList: [null, [Validators.required]],
-      cookingSteps: [null,  [Validators.required, Validators.minLength(1)]],
-    });
-
   }
+
+  initForm() {
+      this.form = this.formBuilder.group({
+        noOfPeople: [null, [Validators.required, Validators.minLength(1)]],
+        dishType: [null, [Validators.required, Validators.minLength(1)]],
+        ingredientList: [null, [Validators.required]],
+        cookingSteps: [null,  [Validators.required, Validators.minLength(1)]]
+      });
+  }
+
   onItemSelect(item: any) {
     console.log(item);
   }
   onSelectAll(items: any) {
     console.log(items);
   }
+
   newRecipe(): void {
     this.submitted = false;
     this.recipe = new Recipe();
   }
-  save() {
-      this.recipeService.createRecipe(this.recipe)
-      .subscribe(data => console.log(data), error => console.log(error));
-      this.recipe = new Recipe();
-  }
+
   onSubmit() {
-    this.submitted = true;
-    this.save();
+    this.recipeService.createRecipe(this.recipe)
+      .subscribe(data => {
+        console.log(data);
+        this.submitted = true;
+      },
+      error => console.log(error));
+      this.recipe = new Recipe();
   }
 }
