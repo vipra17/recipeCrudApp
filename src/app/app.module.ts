@@ -10,7 +10,7 @@ import { IngredientsListComponent } from './components/list-ingredients/list-ing
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
-
+import { RecipeService } from './service/recipe.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,7 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
     ReactiveFormsModule,
     NgMultiSelectDropDownModule.forRoot(),
   ],
-  providers: [],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
