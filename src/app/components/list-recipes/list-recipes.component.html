@@ -3,7 +3,13 @@
       <h3 style="margin-top:20px;font-family:fantasy;">All recipes</h3>
       <div class="row">
         <div *ngFor="let recipe of recipes | async" class="col-sm-4 py-2">
-          <div class="card text-white" style="background-color:#adb5bd;">
+          <div class="card booking-card">
+          <div class="view overlay">
+            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
             <div class="card-body">
                 <recipe-details [recipe]='recipe'></recipe-details>
             </div>
